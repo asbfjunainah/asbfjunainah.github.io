@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ASBF: Kira Sendiri Sebelum Anda Mohon</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F6FF;--card:#fff;--ink:#12263A;--mute:#5A6B7B;--line:#D7E0F2;--brand:#1B4FD8;--brand-ink:#fff;--gold:#C98A0B;--bad:#B3361F;--good:#0E7A55;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1426;--card:#12203A;--ink:#E6EFEE;--mute:#9DB1B0;--line:#26385C;--brand:#7FA8FF;--brand-ink:#0A1530;--gold:#E8B24A;--bad:#F08A74;--good:#4FD1A5;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.6}
+main{max-width:720px;margin:0 auto;padding:20px 18px 60px}
+h1{font-size:clamp(1.9rem,7vw,2.8rem);line-height:1.1;font-weight:800;margin:28px 0 10px;letter-spacing:-.02em}
+h2{font-size:1.35rem;margin:44px 0 12px;font-weight:800}
+p{margin:0 0 12px;max-width:62ch}
+.sub{color:var(--mute);font-size:1.05rem}
+.calc{background:var(--card);border:2px solid var(--brand);border-radius:16px;padding:20px;margin-top:22px}
+label{display:block;font-weight:600;font-size:.9rem;margin:14px 0 4px}
+.row{display:flex;justify-content:space-between;align-items:baseline}
+.row output{font-weight:800;color:var(--brand)}
+input[type=range]{width:100%;accent-color:var(--brand)}
+.big{margin-top:20px;padding:16px;border-radius:12px;background:var(--bg)}
+.big .n{font-size:2.2rem;font-weight:800;line-height:1.1}
+.big .l{color:var(--mute);font-size:.9rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.grid div{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.grid b{display:block;font-size:1.05rem}
+.grid span{font-size:.8rem;color:var(--mute)}
+.pos{color:var(--good)}.neg{color:var(--bad)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:8px}
+th,td{padding:8px 6px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+ol.steps{padding:0;list-style:none;counter-reset:s;margin:0}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 18px 48px;border-left:2px solid var(--line);margin-left:15px}
+ol.steps li:last-child{border-color:transparent}
+ol.steps li::before{content:counter(s);position:absolute;left:-16px;top:0;width:30px;height:30px;border-radius:50%;background:var(--brand);color:var(--brand-ink);font-weight:800;display:grid;place-items:center}
+ol.steps b{display:block}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:8px}
+summary{font-weight:600;cursor:pointer}
+details p{margin:8px 0 0;color:var(--mute)}
+.cta{display:inline-block;background:var(--brand);color:var(--brand-ink);font-weight:800;padding:14px 22px;border-radius:12px;text-decoration:none;margin-top:6px}
+form fieldset{border:1px solid var(--line);border-radius:12px;padding:6px 16px 16px;margin:0 0 16px;background:var(--card)}
+legend{font-weight:800;padding:0 6px}
+form input[type=text],form input[type=tel],form input[type=email],form select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;font:inherit;background:var(--bg);color:var(--ink)}
+button.cta{border:0;font:inherit;font-weight:800;cursor:pointer;width:100%}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;margin:10px 0}
+.chk input{margin-top:4px}
+.num{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font:inherit;background:var(--bg);color:var(--ink)}
+.hero{position:relative;background:linear-gradient(160deg,#0A2A8A,#1B4FD8);color:#fff;text-align:center;padding:30px 18px 84px}.hero small{display:block;opacity:.85;font-size:.9rem}.hero b{display:block;font-size:1.5rem;font-weight:800;letter-spacing:-.01em}.av{position:absolute;left:50%;bottom:-68px;transform:translateX(-50%);width:136px;height:136px;border-radius:50%;border:5px solid #fff;background:#fff;object-fit:cover;box-shadow:0 6px 18px rgba(10,42,138,.25)}.intro{text-align:center;margin-top:76px}.intro p{margin:0 auto 12px}
+.note{font-size:.78rem;color:var(--mute);margin-top:36px;border-top:1px solid var(--line);padding-top:14px}
+a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+</style>
+</head>
+<body>
+<header class="hero"><small>Pembiayaan ASB (ASBF)</small><b>Junainah</b><img class="av" src="data:image/jpeg;base64,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" alt="Junainah" width="136" height="136"></header>
+<main>
+<div class="intro"><h1>Pinjam untuk labur ASB. Kira dulu, baru decide.</h1>
+<p class="sub">ASBF (ASB Financing) ialah pembiayaan untuk beli unit Amanah Saham Bumiputera. Gerakkan slider di bawah dan lihat ansuran bulanan serta bezanya dengan dividen.</p></div>
+
+<section class="calc" aria-label="Kalkulator ASBF">
+<div class="row"><label for="amt">Jumlah pembiayaan (belum termasuk takaful)</label><output id="oa"></output></div>
+<input id="amt" type="range" min="50000" max="200000" step="5000" value="50000">
+<input id="amtn" class="num" type="number" min="50000" max="200000" step="1000" value="50000" aria-label="Taip jumlah pembiayaan" style="margin-top:6px">
+<div class="row"><label for="kas">KAS (Kadar Asas Standard)</label><output id="oks"></output></div>
+<input id="kas" type="range" min="2" max="4" step="0.05" value="2.75">
+<p style="font-size:.82rem;color:var(--mute);margin:4px 0 0">Kadar pembiayaan = KAS + margin bank. KAS semasa 2.75% dan boleh berubah mengikut OPR Bank Negara dan keputusan bank.</p>
+<fieldset style="border:0;padding:0;margin:14px 0 0"><legend style="font-weight:600;font-size:.9rem;padding:0">Pilih pakej</legend>
+<label class="chk"><input type="radio" name="pk" value="A" checked><span><b>Pakej A (takaful RTT RM500)</b><br>KAS + 1.45% (4.20% pada KAS 2.75%)</span></label>
+<label class="chk"><input type="radio" name="pk" value="B"><span><b>Pakej B (takaful RTT RM1K)</b><br>2 tahun pertama: KAS + 1.30% (4.05%)<br>Tahun ke-3 dan seterusnya: KAS + 1.60% (4.35%)</span></label>
+<p style="font-size:.82rem;color:var(--mute);margin:0">Kadar promosi ini hanya diberi jika pembiayaan diambil bersama takaful. Kiraan di page ini menggunakan takaful minimum (RM500 untuk Pakej A, RM1K untuk Pakej B) yang dibiayai sekali. Jumlah perlindungan takaful boleh dilaraskan dan tempoh takaful minimum 5 tahun, jadi angka sebenar mungkin berbeza sedikit.</p></fieldset>
+<label for="age">Umur anda</label><input id="age" class="num" type="number" min="18" max="69" value="40">
+<div class="row"><label for="ten">Tempoh</label><output id="ot"></output></div>
+<input id="ten" type="range" min="5" max="40" step="1" value="30">
+<p id="tnote" style="font-size:.82rem;color:var(--mute);margin:4px 0 0"></p>
+<div class="row"><label for="div">Dividen ASB setahun (2025: 5.75%)</label><output id="od"></output></div>
+<input id="div" type="range" min="3" max="7" step="0.05" value="5.75">
+
+<div class="big"><div class="l">Anda bayar sebulan (ansuran)</div><div class="n" id="mp"></div><div class="l" id="mp2"></div></div>
+<div class="grid">
+<div><b id="dv"></b><span>Dividen ASB yang anda dapat setahun (anggaran)</span></div>
+<div><b id="it"></b><span>Kos pembiayaan tahun pertama (anggaran)</span></div>
+<div><b id="sp" ></b><span>Lebihan tahun pertama (dividen tolak kos)</span></div>
+<div><b id="tt"></b><span>Jumlah semua ansuran sehingga tamat</span></div>
+</div>
+<p style="margin-top:12px;font-size:.9rem" id="msg"></p>
+<p style="font-size:.82rem;color:var(--mute)">Angka di sini sudah termasuk takaful minimum, jadi sedikit lebih tinggi daripada jadual bank (jadual belum masuk takaful). Kadar tidak tetap. Jika KAS naik atau turun, ansuran turut berubah. Semua kiraan di page ini mengandaikan KAS kekal pada nilai yang dipilih di atas.</p>
+</section>
+
+<h2>Bagaimana kalau dividen turun?</h2>
+<p class="sub">Dividen tidak dijamin. Lihat beza tahun pertama pada beberapa tahap dividen, dengan kadar dan jumlah pilihan anda di atas.</p>
+<div class="tbl"><table id="sens"><thead><tr><th>Dividen</th><th>Dividen setahun</th><th>Faedah</th><th>Beza</th></tr></thead><tbody></tbody></table></div>
+
+<h2>Compound dividen, kemudian berhenti pembiayaan</h2>
+<p class="sub">Dividen dilaburkan semula setiap tahun. Selepas tempoh yang dipilih, unit ASB dijual untuk langsaikan baki pembiayaan. Lihat berapa yang tinggal.</p>
+<div class="row"><label for="yrs">Tempoh compound</label><output id="oy"></output></div>
+<input id="yrs" type="range" min="1" max="10" step="1" value="5">
+<div class="grid">
+<div><b id="cv"></b><span>Nilai ASB selepas compound</span></div>
+<div><b id="cb"></b><span>Baki pembiayaan</span></div>
+<div><b id="cn"></b><span>Baki selepas langsai pembiayaan</span></div>
+<div><b id="cp"></b><span>Ansuran yang telah dibayar</span></div>
+</div>
+<div class="big"><div class="l">Untung bersih selepas tolak ansuran</div><div class="n" id="cg"></div></div>
+<p style="font-size:.82rem;color:var(--mute);margin-top:8px">Andaian: dividen dan KAS kekal sepanjang tempoh. Caj penyelesaian awal tidak dikira.</p>
+
+<h2>Rolling dividen: dividen bayar ansuran tahun depan</h2>
+<p class="sub">Tahun pertama anda bayar ansuran sendiri. Dividen tahun pertama digunakan untuk bayar ansuran tahun kedua, dan seterusnya. Lebihan dikumpul. Selepas beberapa tahun, berhenti dan lihat berapa yang anda dapat.</p>
+<div class="row"><label for="ryrs">Berapa tahun rolling</label><output id="ory"></output></div>
+<input id="ryrs" type="range" min="2" max="40" step="1" value="10">
+<div class="grid">
+<div><b id="rcap"></b><span>Modal tunai anda (ansuran tahun pertama)</span></div>
+<div><b id="rex"></b><span>Lebihan dividen yang terkumpul</span></div>
+<div><b id="req"></b><span>Baki selepas jual sijil dan langsai pembiayaan</span></div>
+<div><b id="rtot"></b><span>Jumlah pulangan</span></div>
+</div>
+<div class="big"><div class="l">Untung bersih (jumlah pulangan tolak modal tunai)</div><div class="n" id="rpf"></div><div class="l" id="rpct"></div></div>
+<div class="tbl" style="max-height:260px;overflow-y:auto"><table><thead><tr><th>Tahun</th><th>Ansuran tahun depan</th><th>Dividen</th><th>Lebihan</th></tr></thead><tbody id="rtbl"></tbody></table></div>
+<p style="font-size:.82rem;color:var(--mute);margin-top:8px">Andaian: dividen dan KAS kekal, dividen diambil (tidak dilabur semula) untuk bayar ansuran tahun berikutnya. Pada tahun terakhir, seluruh dividen jadi lebihan. Kalau dividen kurang daripada ansuran tahun depan, bezanya ditambah ke modal tunai. Caj penyelesaian awal tidak dikira. Dividen tidak dijamin.</p>
+
+<h2>ASB lawan KWSP, Tabung Haji dan FD</h2>
+<p class="sub">Ansuran bulanan yang sama dimasukkan ke tempat lain selama <span id="oy2"></span> tahun. Berapa nilai simpanan akhir?</p>
+<div class="tbl"><table><thead><tr><th>Tempat</th><th>Nilai akhir</th><th></th></tr></thead><tbody id="cmp"></tbody></table></div>
+<p style="font-size:.82rem;color:var(--mute);margin-top:8px">Kadar dividen 2025: KWSP 6.15%, Tabung Haji 3.50% (selepas zakat), purata FD Islam setahun 3.22%. ASB dibiayai membawa risiko lebih tinggi kerana ansuran perlu dibayar walaupun dividen turun. Dividen tidak dijamin.</p>
+
+<h2>Semak kelayakan dalam 1 minit</h2>
+<ul style="padding-left:20px;margin:0 0 12px">
+<li>Warganegara Malaysia, Bumiputera</li>
+<li>Umur 18 tahun ke atas, dan pembiayaan tamat sebelum umur 70</li>
+<li>Ada pendapatan tetap (makan gaji atau berniaga)</li>
+<li>Ada akaun ASB, atau sedia buka sekali</li>
+</ul>
+
+<h2>Tiga perkara anda patut tahu</h2>
+<ul style="padding-left:20px;margin:0 0 12px">
+<li><b>Dividen tidak dijamin.</b> Kalau dividen rendah, ansuran tetap kena dibayar.</li>
+<li><b>Kadar boleh berubah.</b> Kadar mengikut KAS campur margin. Kalau KAS naik, ansuran pun naik.</li>
+<li><b>Unit ASB menjadi cagaran.</b> Untuk keluarkan unit, baki pembiayaan perlu diselesaikan dulu.</li>
+</ul>
+<p>Pilih ansuran yang anda masih selesa bayar walaupun dividen turun ke 4%.</p>
+
+<h2>Pastikan anda berurusan dengan orang yang betul</h2>
+<ul style="padding-left:20px;margin:0 0 12px">
+<li>Saya tidak akan minta bayaran pendahuluan, fi proses atau deposit.</li>
+<li>Kelulusan, surat tawaran dan akad dikeluarkan oleh bank. Ansuran dibayar terus kepada bank.</li>
+<li>Nombor WhatsApp saya hanya satu: 012-742 5106.</li>
+</ul>
+
+<h2>Soalan pelanggan yang biasa</h2>
+<details><summary>Kalau dividen lebih rendah daripada kadar pembiayaan?</summary><p>Beza jadi negatif dan pelanggan perlu tampung ansuran sendiri. Sebab itu pilih jumlah pembiayaan yang mampu dibayar walaupun dividen turun.</p></details>
+<details><summary>Kenapa kena ambil takaful?</summary><p>Kadar promosi 4.20% dan 4.05% hanya diberi bersama takaful RTT. Terangkan manfaat perlindungan dan caruman (RM500 atau RM1K) supaya pelanggan faham kosnya.</p></details>
+<details><summary>Boleh bayar awal?</summary><p>Boleh, tetapi semak terma dan caj penyelesaian awal yang terpakai.</p></details>
+<details><summary>Dokumen apa diperlukan?</summary><p>Biasanya kad pengenalan, slip gaji atau penyata pendapatan, dan akaun ASB. Sahkan senarai terkini dengan bank anda.</p></details>
+
+<h2>Mohon sekarang</h2>
+<p>Isi butiran di bawah. Selepas tekan butang, WhatsApp akan terbuka dengan mesej siap untuk dihantar kepada saya.</p>
+<form id="f"></form>
+
+<p class="note">Anggaran ini untuk tujuan ilustrasi sahaja. Dividen ASB tidak dijamin dan boleh berubah setiap tahun. Kadar, tempoh dan syarat sebenar bergantung pada polisi bank dan kelulusan pembiayaan. Dapatkan nasihat daripada pegawai bank sebelum membuat keputusan.</p>
+</main>
+<script>
+// Tukar nombor dan nama anda di sini
+var PHONE="60127425106", NAMA="Junainah";
+var $=function(i){return document.getElementById(i)};
+var rm=function(n){return "RM "+Math.round(n).toLocaleString("en-MY")};
+function pmt(L,r,y){var i=r/100/12,m=y*12;return i===0?L/m:L*i/(1-Math.pow(1+i,-m))}
+function calc(){
+ var L=Math.min(200000,Math.max(50000,+$("amtn").value||50000)),pk=getPk(),y=tenure(),d=+$("div").value;
+ $("oa").textContent=rm(L);$("oks").textContent=(+$("kas").value).toFixed(2)+"%";$("ot").textContent=y+" tahun";$("od").textContent=d.toFixed(2)+"%";
+ var S=sched(L+pk.t,pk,y),p=S.p1,r=pk.r1,dv=L*d/100,it=(L+pk.t)*r/100,sp=dv-it;
+ $("mp2").textContent=S.p2?"Mulai tahun ke-3: "+rm(S.p2)+" sebulan ("+pk.r2.toFixed(2)+"%)":"Anggaran jika KAS kekal. Ansuran boleh berubah jika KAS berubah.";
+ $("mp").textContent=rm(p);$("dv").textContent=rm(dv);$("it").textContent=rm(it);$("tt").textContent=rm(S.total);
+ var cy=Math.min(+$("yrs").value,y),bal=L+pk.t,paid=0,ks=0,th=0,fd=0,mo=cy*12;
+ for(var m=1;m<=mo;m++){var ii=(m<=24?pk.r1:pk.r2)/1200,pay=(m<=24||!S.p2)?S.p1:S.p2;bal=bal*(1+ii)-pay;paid+=pay;ks=ks*(1+0.0615/12)+pay;th=th*(1+0.035/12)+pay;fd=fd*(1+0.0322/12)+pay}
+ var V=L*Math.pow(1+d/100,cy),net=V-bal,gain=net-paid;
+ $("oy").textContent=cy+" tahun";$("cv").textContent=rm(V);$("cb").textContent=rm(bal);$("cn").textContent=rm(net);$("cp").textContent=rm(paid);
+ var g=$("cg");g.textContent=(gain>=0?"+":"-")+rm(Math.abs(gain));g.className=gain>=0?"pos":"neg";
+ $("oy2").textContent=cy;
+ var cm=[["ASB (selepas langsai pembiayaan)",net],["KWSP 6.15%",ks],["Tabung Haji 3.50%",th],["FD Islam 3.22%",fd]],mx=Math.max.apply(null,cm.map(function(r){return r[1]}));
+ $("cmp").innerHTML=cm.map(function(r){return "<tr><td>"+r[0]+"</td><td><b>"+rm(r[1])+"</b></td><td>"+(r[1]===mx?"Tertinggi":"")+"</td></tr>"}).join("");
+ var ry=Math.min(+$("ryrs").value,y),D=L*d/100,yp=[0],rb=L+pk.t,n,q;
+ for(n=1;n<=ry+1;n++){var ss=0;for(q=12*(n-1)+1;q<=12*n;q++){if(q>y*12)break;ss+=(q<=24||!S.p2)?S.p1:S.p2}yp.push(ss)}
+ for(q=1;q<=ry*12;q++){rb=rb*(1+(q<=24?pk.r1:pk.r2)/1200)-((q<=24||!S.p2)?S.p1:S.p2)}
+ var cap=yp[1],ex=0,rt="";
+ for(n=1;n<=ry;n++){var nd=n<ry?yp[n+1]:0,e=D-nd;if(e<0){cap+=-e;e=0}ex+=e;rt+="<tr><td>"+n+"</td><td>"+rm(nd)+"</td><td>"+rm(D)+"</td><td>"+rm(e)+"</td></tr>"}
+ var eq=L-rb,tot=ex+eq,pf=tot-cap,rp=$("rpf");
+ $("ory").textContent=ry+" tahun";$("rcap").textContent=rm(cap);$("rex").textContent=rm(ex);$("req").textContent=rm(eq);$("rtot").textContent=rm(tot);
+ rp.textContent=(pf>=0?"+":"-")+rm(Math.abs(pf));rp.className="n "+(pf>=0?"pos":"neg");
+ $("rpct").textContent=cap>0?Math.round(pf/cap*100)+"% daripada modal tunai":"";
+ $("rtbl").innerHTML=rt;
+ var s=$("sp");s.textContent=(sp>=0?"+":"-")+rm(Math.abs(sp));s.className=sp>=0?"pos":"neg";
+ $("msg").textContent="Jumlah dibiayai termasuk takaful minimum: "+rm(L+pk.t)+". "+(sp>=0?"Dalam setahun pertama, dividen ASB lebih tinggi daripada kos pembiayaan. Ini anggaran, bukan jaminan.":"Dalam setahun pertama, dividen ASB kurang daripada kos pembiayaan. Anda perlu tampung bezanya.");
+ var rows=[4,5,5.75,6.5].map(function(x){var v=L*x/100,b=v-it;return "<tr><td>"+x+"%</td><td>"+rm(v)+"</td><td>"+rm(it)+"</td><td class='"+(b>=0?"pos":"neg")+"'>"+(b>=0?"+":"-")+rm(Math.abs(b))+"</td></tr>"}).join("");
+ document.querySelector("#sens tbody").innerHTML=rows;
+ CALC="Kiraan ASBF: pembiayaan "+rm(L)+" + takaful minimum "+rm(pk.t)+" (jumlah "+rm(L+pk.t)+"), "+y+" tahun (umur "+$("age").value+"), "+pk.name+", ansuran anggaran "+rm(p)+"/bulan"+(S.p2?" (selepas 2 tahun "+rm(S.p2)+")":"");
+}
+var CALC="";
+var FORM=[
+["Butir-butir pemohon",[["Nama","text"],["IC","text"],["Email","email"],["No tel","tel"],["Alamat","text"],["Tempoh menetap","text"],["Status rumah",["Sewa","Sendiri","Majikan"]],["Nama ibu","text"],["Nama pasangan (kosongkan jika belum berkahwin)","text",1],["No tel pasangan (jika ada)","tel",1]]],
+["Maklumat majikan",[["Nama company","text"],["Alamat company","text"],["No tel company","tel"],["Jawatan","text"],["Tempoh berkhidmat","text"]]],
+["Rujukan kecemasan (selain pasangan)",[["Nama rujukan","text"],["No tel rujukan","tel"],["Hubungan","text"]]]
+];
+var n=0,h="";
+FORM.forEach(function(g){h+="<fieldset><legend>"+g[0]+"</legend>";g[1].forEach(function(f){var id="f"+(n++);h+="<label for='"+id+"'>"+f[0]+"</label>";if(Array.isArray(f[1])){h+="<select id='"+id+"' required><option value=''>Pilih</option>"+f[1].map(function(o){return "<option>"+o+"</option>"}).join("")+"</select>"}else{h+="<input id='"+id+"' type='"+f[1]+"'"+(f[2]?"":" required")+">"}});h+="</fieldset>"});
+h+="<label class='chk'><input type='checkbox' required><span>Saya setuju butiran ini dihantar melalui WhatsApp untuk tujuan semakan permohonan.</span></label><button class='cta' type='submit'>Hantar melalui WhatsApp</button>";
+$("f").innerHTML=h;
+$("f").addEventListener("submit",function(e){e.preventDefault();var k=0,t="Salam "+NAMA+", saya berminat memohon ASBF.\n"+CALC+"\n";FORM.forEach(function(g){t+="\n*"+g[0]+"*\n";g[1].forEach(function(f){t+=f[0]+" : "+($("f"+(k++)).value.trim()||"-")+"\n"})});window.open("https://wa.me/"+PHONE+"?text="+encodeURIComponent(t),"_blank")});
+var PK={A:{label:"Pakej A (takaful RTT RM500)",m1:1.45,m2:1.45,t:500},B:{label:"Pakej B (takaful RTT RM1K)",m1:1.30,m2:1.60,t:1000}};
+function getPk(){var b=PK[document.querySelector("input[name=pk]:checked").value],k=+$("kas").value;return{name:b.label+", KAS "+k.toFixed(2)+"% + margin, kadar "+(k+b.m1).toFixed(2)+"%"+(b.m1!==b.m2?" (tahun ke-3: "+(k+b.m2).toFixed(2)+"%)":""),t:b.t,r1:k+b.m1,r2:k+b.m2}}
+function sched(L,k,y){var m=y*12,i=k.r1/1200,p1=pmt(L,k.r1,y);if(k.r1===k.r2||m<=24)return{p1:p1,p2:0,total:p1*m};var g=Math.pow(1+i,24),b=L*g-p1*(g-1)/i,p2=pmt(b,k.r2,(m-24)/12);return{p1:p1,p2:p2,total:p1*24+p2*(m-24)}}
+function tenure(){var a=+$("age").value||40,mx=Math.min(40,70-a),t=$("ten");t.max=Math.max(mx,5);if(+t.value>+t.max)t.value=t.max;$("tnote").textContent=mx<5?"Umur melebihi had. Tempoh minimum 5 tahun tidak dapat dipenuhi (70 tolak umur).":"Tempoh maksimum anda: "+mx+" tahun (70 tolak umur "+a+")";return +t.value}
+$("amt").addEventListener("input",function(){$("amtn").value=$("amt").value;calc()});
+$("amtn").addEventListener("input",function(){$("amt").value=$("amtn").value;calc()});
+["age","ten","div","yrs","kas","ryrs"].forEach(function(i){$(i).addEventListener("input",calc)});
+document.querySelectorAll("input[name=pk]").forEach(function(e){e.addEventListener("input",calc)});
+calc();
+</script>
+</body>
+</html>
